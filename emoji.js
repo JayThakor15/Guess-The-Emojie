@@ -42,6 +42,7 @@ const guessInput = document.getElementById("guess-input");
 const resultElement = document.getElementById("result");
 const scoreElement = document.getElementById("score");
 const guessBtn = document.getElementById("guess-button");
+const hintBtn = document.getElementById("hint-button");
 
 // 🆕 Add UI elements
 const streakElement = document.createElement("div");
@@ -61,12 +62,6 @@ progressBar.style.margin = "10px 0";
 progressBar.style.borderRadius = "5px";
 progressBar.style.transition = "width 0.2s";
 time.after(progressBar);
-
-const hintBtn = document.createElement("button");
-hintBtn.textContent = "Show Hint";
-hintBtn.className = "button";
-hintBtn.style.margin = "10px";
-guessBtn.after(hintBtn);
 
 let hintShown = false;
 
@@ -113,8 +108,6 @@ function showHint() {
     hintShown = true;
   }
 }
-
-hintBtn.addEventListener("click", showHint);
 
 document.addEventListener("DOMContentLoaded", () => {
   shuffledEmojis = shuffleArray(emojiDetails);
